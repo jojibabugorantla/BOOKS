@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Books Collection</title>
+<style>
+/* General Reset */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Arial', sans-serif;
+background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+color: #333;
+line-height: 1.6;
+}
+
+header {
+background: #4c6ef5;
+color: white;
+text-align: center;
+padding: 50px;
+margin-bottom: 20px;
+border-bottom: 5px solid #0056b3;
+}
+
+header h1 {
+font-size: 3rem;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+header p {
+font-size: 1.2rem;
+margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.search-bar input {
+padding: 10px;
+font-size: 1.1rem;
+width: 250px;
+border-radius: 5px;
+border: 1px solid #ccc;
+}
+
+/* Book Container */
+.book-container {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+padding: 20px;
+}
+
+/* Individual Book */
+.book {
+background: white;
+border-radius: 15px;
+width: 220px;
+text-align: center;
+padding: 20px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+overflow: hidden;
+}
+
+.book:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.book img {
+border-radius: 10px;
+width: 100%;
+height: auto;
+}
+
+.book-title {
+font-size: 1.4rem;
+font-weight: bold;
+color: #333;
+margin: 15px 0;
+}
+
+.button {
+background: #4c6ef5;
+color: white;
+border: none;
+padding: 8px;
+border-radius: 5px;
+width: 100%;
+margin-top: 10px;
+font-size: 1rem;
+text-transform: uppercase;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+.button:hover {
+background: #3a5ec2;
+}
+
+/* Footer */
+footer {
+text-align: center;
+padding: 20px;
+background-color: #333;
+color: white;
+margin-top: 40px;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>My Books Collection</h1>
+<p>Discover and enjoy my collection. Download or read them online!</p>
+</header>
+
+<!-- Search Bar -->
+<div class="search-bar">
+<input type="text" id="search" placeholder="Search for books..." onkeyup="searchBooks()">
+</div>
+
+<div class="book-container" id="bookContainer">
+<!-- Book 1 -->
+<div class="book">
+<img src="The Great Adventure.jpg" alt="Book 1 Cover">
+<div class="book-title">The Great Adventure</div>
+<a href="download/book1.pdf" class="button" download>Download</a>
+<a href="read/book1.html" class="button">Read</a>
+</div>
+
+<!-- Book 2 -->
+<div class="book">
+<img src="Mystery Unfolded.jpg" alt="Book 2 Cover">
+<div class="book-title">Mystery Unfolded</div>
+<a href="download/book2.pdf" class="button" download>Download</a>
+<a href="read/book2.html" class="button">Read</a>
+</div>
+
+<!-- Book 3 -->
+<div class="book">
+<img src="book3-cover.jpg" alt="Book 3 Cover">
+<div class="book-title">Journey Beyond Time</div>
+<a href="download/book3.pdf" class="button" download>Download</a>
+<a href="read/book3.html" class="button">Read</a>
+</div>
+
+<!-- Book 4 -->
+<div class="book">
+<img src="book4-cover.jpg" alt="Book 4 Cover">
+<div class="book-title">The Silent Observer</div>
+<a href="download/book4.pdf" class="button" download>Download</a>
+<a href="read/book4.html" class="button">Read</a>
+</div>
+
+<!-- Book 5 -->
+<div class="book">
+<img src="book5-cover.jpg" alt="Book 5 Cover">
+<div class="book-title">Whispers of the Past</div>
+<a href="download/book5.pdf" class="button" download>Download</a>
+<a href="read/book5.html" class="button">Read</a>
+</div>
+
+<!-- Book 6 -->
+<div class="book">
+<img src="book6-cover.jpg" alt="Book 6 Cover">
+<div class="book-title">Echoes of Tomorrow</div>
+<a href="download/book6.pdf" class="button" download>Download</a>
+<a href="read/book6.html" class="button">Read</a>
+</div>
+</div>
+
+<footer>
+<p>&copy; 2025 My Books Collection. All rights reserved.</p>
+</footer>
+
+<script>
+function searchBooks() {
+const searchTerm = document.getElementById("search").value.toLowerCase();
+const books = document.querySelectorAll(".book");
+books.forEach(book => {
+const title = book.querySelector(".book-title").textContent.toLowerCase();
+if (title.includes(searchTerm)) {
+book.style.display = "block";
+} else {
+book.style.display = "none";
+}
+});
+}
+</script>
+</body>
+</html>
